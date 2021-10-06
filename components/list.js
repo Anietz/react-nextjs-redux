@@ -12,7 +12,7 @@ export default function List({deleteAddress}){
         <ul className="list">
         { data.map((value,i)=>{  
               return (
-                   <li key={i} > <span  className="list-name">{value.name} <i>{value.age} year{value.age > 1 ?'s':''} </i> </span>  
+                   <li key={i} > <span  className="list-name">{value.name}</span>  
                    <span onClick={()=>{deleteAddress(value.id)}} className="list-delete" >x</span> </li>
              )            
         }) }

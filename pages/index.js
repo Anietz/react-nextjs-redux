@@ -19,18 +19,15 @@ export default function Home() {
     const init =  [
       {
         id:1,
-        name:"Aniezt",
-        age:50
+        name:"Mike"
       },
        {
         id:2,
-        name:"Jenny",
-        age:23
+        name:"Jenny"
       },
        {
           id:3,
-        name:"Sophie",
-        age:2
+        name:"Sophie"
       }
     ];  
 
@@ -83,8 +80,7 @@ export default function Home() {
 
     const itemToAdd =  {
       id:lastId,
-      name:value,
-      age:10
+      name:value
       }
 
     data.push(itemToAdd);

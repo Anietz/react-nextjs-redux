@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+A boilerplate for React, Next JS, Redux and Redux persistence store for data caching in localstorage
+
+## Live Demo
+
+[https://react-nextjs-redux.vercel.app/](https://react-nextjs-redux.vercel.app/)
 
 ## Getting Started
 
