@@ -2,9 +2,9 @@
 import {useSelector} from "react-redux";
 
 export default function List({deleteAddress}){
-    const addresses = useSelector(state=>state.addresses);
-    const filteredAddress = useSelector(state=>state.filteredAddress);
-    const filterStatus = useSelector(state=>state.filterStatus);
+    const addresses =useSelector(state=>state.addressReducer.addresses);
+    const filteredAddress = useSelector(state=>state.addressReducer.filteredAddress);
+    const filterStatus = useSelector(state=>state.addressReducer.filterStatus);
 
     const data = !filterStatus ? addresses : filteredAddress;
 

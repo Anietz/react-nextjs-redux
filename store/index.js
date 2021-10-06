@@ -6,16 +6,9 @@
 //  4. and changes will automatically re-render your app
 
 import {createStore} from 'redux';
-import rootReducer from './reducers';
+import allReducers from './reducers';
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' // defaults is localStorage
-
-let initialState = {
-    addresses: [],
-    filteredAddress:[],
-    filterStatus:false,
-    appLoaded:false
-}
 
 
 const persistConfig = {
@@ -23,11 +16,10 @@ const persistConfig = {
   storage,
 }
 
-const persistedReducer = persistReducer(persistConfig, rootReducer)
+const persistedReducer = persistReducer(persistConfig, allReducers)
 
 const store = createStore(
-    persistedReducer,
-    initialState,
+    persistedReducer
 );
 
 export const persistor = persistStore(store);
