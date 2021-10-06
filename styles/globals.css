@@ -34,3 +34,9 @@ ul.list li {
 .list-delete {
   float: right;
 }
+
+@media (max-width: 767px) {
+  ul.list {
+    padding: 0 1em;
+  }
+}
