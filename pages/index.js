@@ -5,7 +5,9 @@ import {useRef, useState,useEffect} from "react"
 import List from "../components/list";
 import Form from "../components/form";
 import {useDispatch,useSelector} from 'react-redux';
-import {setInitialData,addAddress,setFilteringStatus,setFilteredData,deleteAddress} from "../store/actions"
+import {setInitialData,addAddress,setFilteringStatus,setFilteredData,deleteAddress} from "../store/actions";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function Home() {
@@ -60,7 +62,7 @@ export default function Home() {
   const processSearch = ()=>{
     const value = inputText.current.value
     if(!value) {
-      alert("Enter address");
+      toast.info("Enter address");
       return;
     }
 
@@ -68,7 +70,7 @@ export default function Home() {
 
     const checker = addresses.find((v)=>v.name.toLowerCase() == value.toLowerCase());
     if(checker) {
-      alert("Value already exist");
+      toast.error("Name already exist");
       return;
     }
     Object.assign(data,addresses);
@@ -95,6 +97,8 @@ export default function Home() {
 
     inputText.current.value = "";
     dispatch(setFilteringStatus(false));
+
+    toast.success("Added succesfully!");
   }
 
   const search = ()=>{
@@ -138,12 +142,29 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
+
+      <ToastContainer
+      theme="dark"
+      //theme="colored or light or dark"
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        />
+     
       <Head>
         <title>Address app</title>
         <meta name="description" content="Address app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+
+      
       <main className={styles.main}>
         <h1 className={styles.title}>
          Address Hand Book
