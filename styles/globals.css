@@ -14,3 +14,23 @@ a {
 * {
   box-sizing: border-box;
 }
+
+ul.list {
+  padding: 0 26em;
+}
+
+ul.list li {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 6px;
+  background: #d3d3d338;
+  padding: 9px;
+}
+
+.list-name {
+  padding-right: 10em;
+}
+
+.list-delete {
+  float: right;
+}
